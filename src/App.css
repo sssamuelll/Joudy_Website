@@ -1,0 +1,614 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap");
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  text-align: center;
+  --rojo: rgb(217, 56, 50);
+  --header-height: 4rem;
+  --blanco-1: #d8d8d8;
+  --gris: #333;
+  --grid-margin: clamp(25px, 70 / 1940 * 100vw, 60 / 1440 * 100vw);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+
+header {
+  text-align: center;
+}
+
+.logo-container {
+  margin-bottom: 0px;
+}
+
+.logo-container img {
+  max-width: 100%;
+  
+  height: auto;
+  padding: 8px;
+}
+
+.art-container {
+  width: 100%;
+  height: 637px;
+  overflow: hidden;
+}
+
+.art-container::before {
+  content: ""; /* Create an empty pseudo-element */
+  display: block;
+  width: 100%;
+  height: 109%; /* Set the height to match the container height */
+  background-image: url("/images/joudy-bandPic.jpg"); /* Set the background image */
+  background-position: 50% 58%; /* Set the position to center the image */
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-repeat: no-repeat;
+}
+
+/* SECTION A */
+
+.concert-list {
+  list-style: none;
+  padding: 0;
+}
+
+.concerts-list-item {
+  /*border: 1px solid #ccc; 
+  margin-bottom: 12px; */
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in the width */
+  display: flex;
+ 
+}
+
+.list-city-container{
+  width: 8rem;
+}
+
+.list-venue-container{
+  width: -webkit-fill-available;
+}
+
+.button-tickets-container{
+  width: 6rem;
+}
+
+.concerts-list-date {
+  font-family: "Oswald", sans-serif;
+  width: 100px;
+  font-size: 17px;
+}
+
+.concerts-list-infos {
+  margin-left: 4rem;
+  
+  display: flex;
+  width: 100%;
+}
+
+.concerts-list-city {
+  justify-content: center;
+  align-items: baseline;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-size: 22px;
+}
+
+.concerts-list-item:hover {
+  background-color: var(--rojo);
+  color: white;
+}
+
+.concert-list-section{
+  margin-top: 0.5rem;
+}
+
+/* SECTION B */
+
+.sectionB-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 38rem;
+}
+
+.container {
+  text-align: center;
+}
+
+.container-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 80px;
+  color: var(--rojo);
+  margin-top: 0px;
+}
+
+.merch {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.merch-item {
+  width: 280px;
+  height: 450px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.merch-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.merch-item img:hover {
+  transform: scale(1.05);
+}
+
+.bottomArt-container {
+  margin-bottom: 0px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  padding-bottom: 2px;
+}
+
+.product-type {
+  font-size: 14px;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  color: #8a8a8a;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+}
+
+.product-price {
+  padding-bottom: 2px;
+}
+
+.button-buy {
+  border-radius: 8px;
+  width: -webkit-fit-content;
+  
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.button-buy:hover {
+  border-color: #eeefff;
+}
+.button-buy:focus,
+.button-buy:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Cart Order*/
+
+.cart-container {
+  width: 100%;
+  max-width: 40%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 2147483647;
+  background-color: black;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding-left: clamp(10px, 10 / 1440 * 100vw, 10 / 1440 * 100vw);
+  padding-right: clamp(10px, 10 / 1440 * 100vw, 10 / 1440 * 100vw);
+  position: relative;
+  z-index: 2147483647;
+  background-color: var(--rojo);
+}
+
+.cart-title {
+  font-family: "Oswald", sans-serif;
+
+  font-size: 22px;
+  color: var(--blanco-1);
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  font-weight: 500;
+}
+.cart-text {
+  font-family: "Oswald", sans-serif;
+  padding: 3px;
+  font-size: 18px;
+  color: var(--blanco-1);
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  font-weight: 500;
+}
+
+.close-button {
+  padding: 0.6em 1.2em;
+  font-size: 1.2em;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.2s ease-in-out;
+}
+
+.close-button:hover {
+  border-color: #eeefff;
+  transform: scale(1.3);
+}
+
+/* Section C */
+
+.container-2-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 60px;
+  color: var(--rojo);
+  margin-top: 0px;
+  margin-bottom: 0px;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*.container-2-title:hover{
+  color: var(--gris);
+}*/
+
+.container-2-title br {
+  display: block;
+  content: ""; /* Required for older versions of Internet Explorer */
+  margin-top: 0.1em;
+}
+
+.button-sub {
+  border-radius: 22px;
+  width: 7.5%;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  margin-bottom: 22px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  font-family: "Oswald", sans-serif;
+}
+.button-container {
+  margin-top: 1em; 
+}
+
+/*Footer*/
+
+.footerStyle {
+  margin-top: 3rem;
+  background: linear-gradient(to bottom, black, var(--rojo)); 
+  min-height: 500px; 
+  display: flex;         
+  flex-direction: column;
+  justify-content: flex-end; 
+}
+
+.bottomArt-container img {
+  width: 69%;
+  height: auto;
+  padding: 0px;
+  background-color: transparent; 
+}
+.footerBottom {
+  display: flex;              
+  justify-content: space-evenly;  
+  align-items: center;         
+  color: black;                
+  font-family: 'Oswald', sans-serif; 
+  padding: 10px;               
+}
+.footerBottom a {
+  color: black; 
+}
+
+.footer_social {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer_icon{
+  list-style: none;
+  flex: 0 0 3.2rem;
+  max-height: 3.2rem;
+  
+}
+
+.newsletter{
+  display: flex;
+  flex-direction: column;               /* Enable Flexbox for easy centering */
+  justify-content: center;     /* Center horizontally */ 
+  align-items: center;         /* Center vertically */ 
+  color: black;                
+  font-family: 'Oswald', sans-serif; 
+  padding: 10px;  
+  font-size: 18px;
+  text-align: center;          /* Center the text within the p tag */
+  margin-bottom: 1rem;
+}
+
+.subscription-input{
+  font-size: 20px;
+  padding: 0.5rem;
+  width: 10rem;
+}
+
+.subscription-button{
+  font-size: 20px;
+  padding: 9px 1.5rem;
+  border-radius: 0 18px 18px 0;
+  margin-left:1px;
+}
+
+.title-subscription {
+  font-size: 42px;
+  font-family: 'Oswald', sans-serif; 
+  font-weight: 600;
+  color: #f1f1f1;
+}
+
+
+.newsletter p { 
+  margin-top: 1px;
+  margin-bottom: 1px;
+  max-width: 50%; 
+  word-wrap: break-word; 
+  color: #8a8a8a;
+}
+
+.footer-space{
+  height: 4rem;
+}
+
+
+
+
+
+
+/*Cart Image*/
+
+.cart-image img {
+  width: 117px;
+  height: 117px;
+  padding: 1.25rem 1.55rem 1.25rem 1.25rem;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px dashed var(--rojo);
+}
+
+.article-description {
+  display: grid;
+  margin-top: 1.8rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.quantity-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 8rem;
+  border: 1px dashed var(--blanco-1);
+}
+
+.article-button:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+/*El carrito*/
+
+.icon-cart-container {
+  position: fixed;
+  top: 2.5666666667rem;
+  right: var(--grid-margin);
+  background-color: transparent !important;
+  color: #fff;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  text-align: center;
+  margin-right: 0;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+}
+
+.curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 50;
+}
+
+button {
+  color: var(--blanco-1)
+}
+
+@media screen and (max-width: 768px) {
+  /* Ajustes generales para mejorar la legibilidad y la usabilidad */
+  :root {
+    --header-height: 3rem; /* Ajusta la altura del header para móviles */
+  }
+
+  /* Contenedor principal y secciones */
+  #root, .sectionB-container, .concert-list-section {
+    max-width: 100%; /* Ajusta el ancho máximo para móviles */
+    padding: 0.5rem;
+  }
+
+  /* Título de secciones */
+  .container-title, .container-2-title {
+    font-size: 40px; /* Reducir el tamaño del título para pantallas pequeñas */
+  }
+  
+  header, .logo-container img {
+    width: 100%; /* Asegura que el logo y la imagen de portada se ajusten al ancho */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    padding: 0; /* Remueve el padding innecesario */
+  }
+
+
+  .art-container::before{
+    height:200px;
+  }
+  /* Ajuste general de imágenes */
+  img {
+    max-width: 100%; /* Asegura que todas las imágenes sean responsivas */
+    height: auto;
+  }
+  
+  .art-container {
+    height: auto; /* Permite que el contenedor de arte se ajuste al contenido */
+    max-height: 50vh; /* Limita la altura para evitar que ocupe demasiado en pantalla */
+  }
+  
+  .merch {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+
+  /* Ajustes para elementos de la lista de conciertos, merchandising, etc. */
+  .cart-container, .concert-list-section, .sectionB-container {
+    width: 90%; /* Ajusta el ancho para un mejor fit en la pantalla */
+    margin: 0 auto; /* Centra los elementos */
+    height:100%
+  }
+
+  .cart-container{
+    max-width:100%;
+  }
+
+
+  .merch-item {
+    width: 100%; /* Ajusta el ancho para móviles */
+    margin: 10px 0; /* Agrega un espacio entre elementos */
+    height: 500px;
+  }
+  
+  /* Ajusta los tamaños de fuente y otros elementos para una mejor visibilidad */
+  .concerts-list-item, .product-title, .product-type, .cart-title, .cart-text {
+    font-size: smaller; /* Reduce el tamaño de fuente para adaptarse a la pantalla */
+  }
+
+  /* Mejora la interacción con botones para que sean más fáciles de tocar */
+  .button-buy, .close-button, .button-sub {
+    width: auto;
+    margin: 0.5rem;
+    padding: 1em; /* Aumenta el padding para un área de toque más grande */
+    font-size: larger; /* Aumenta el tamaño de la fuente para leer fácilmente */
+  }
+  
+  /* Ajustes para el footer y elementos sociales */
+  .footerBottom, .newsletter {
+    flex-direction: column; /* Cambia la disposición de los elementos para un mejor ajuste */
+  }
+
+  .footer-space {
+    height: 1rem;
+
+  }
+
+  .footer_social {
+    /* because it is an ul i want to erase the padding left it usually has */
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer_icon {
+    height: 3.2rem; /* Ajusta el tamaño de los iconos para móviles */
+    width: 3.2rem;
+    margin: 0.5rem 0; /* Agrega espacio entre los iconos */
+
+  }
+
+  .footerStyle{
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-image img, .article-description, .quantity-container {
+    width: auto;
+    margin: 0.5rem;
+  }
+
+  .concerts-list-item {
+    display: block; /* Cambia flex a block para apilar verticalmente */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 1rem; /* Agrega espacio entre los elementos de la lista */
+    padding: 0;
+  }
+
+  .concerts-list-date,
+  .concerts-list-infos,
+  .concerts-list-city {
+    display: flex; /* Cada elemento en su propia línea */
+    margin: 0.5rem auto; /* Espaciado arriba y abajo para cada elemento */
+  }
+
+  .concerts-list-infos button {
+    margin-top:1rem;
+  }
+
+  .concerts-list-date {
+    margin: 0 auto; /* Centra la fecha horizontalmente */
+    display: block; /* Muestra la fecha en su propia línea */
+  }
+
+  .concerts-list-item a {
+    display: block; /* Mueve el botón de tickets a su propia línea */
+    margin-top: 1rem; /* Agrega un poco de espacio arriba del botón */
+    width: auto; /* Permite que el botón se ajuste al contenido */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .concerts-list-infos {
+    justify-content: center; /* Centra los elementos dentro del flex container */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Alinea los elementos en el centro */
+    margin-left: 0; /* Restablece el margen izquierdo */
+    margin-bottom: 2rem
+  }
+}
