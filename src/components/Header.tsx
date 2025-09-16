@@ -13,7 +13,10 @@ const Header: React.FC = () => {
       <div 
         className="art-container"
         style={{
-          backgroundImage: `url(${import.meta.env.BASE_URL}images/joudy-bandPic.jpg)`
+          backgroundImage: `url(${import.meta.env.BASE_URL}images/joudy-bandPic.jpg)`,
+          backgroundPosition: "50% 58%",
+          backgroundSize: "cover", 
+          backgroundRepeat: "no-repeat",
         }}
       >
         
