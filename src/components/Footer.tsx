@@ -134,7 +134,7 @@ const Footer = () => {
         </a>
         <a href="">Legal Notice</a>
         <a href="">Privacy Policy</a>
-        <a href="">Developed by Nankurunaisa Studio</a>
+        <a href="">Developed by Carlos Rey and Samuel Dario</a>
       </div>
     </footer>
   );
