@@ -6,11 +6,16 @@ const Header: React.FC = () => {
       <div className="logo-container">
         <img
           className="bandLogo"
-          src="/images/bold-bandlogo.png"
+          src={`${import.meta.env.BASE_URL}/images/bold-bandlogo.png`}
           alt="Band Logo"
         />
       </div>
-      <div className="art-container">
+      <div 
+        className="art-container"
+        style={{
+          backgroundImage: `url(${import.meta.env.BASE_URL}images/joudy-bandPic.jpg)`
+        }}
+      >
         
       </div>
     </header>
