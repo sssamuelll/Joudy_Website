@@ -126,7 +126,7 @@ const Footer = () => {
       </ul><div className="bottomArt-container">
         <img
           className="bandLogo"
-          src="/images/bold-bandlogo-black.png"
+          src={`${import.meta.env.BASE_URL}/images/bold-bandlogo-black.png`}
           alt="Band Logo" />
       </div><div className="footerBottom">
         <a href="">
